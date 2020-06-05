@@ -10,13 +10,13 @@
         android:id="@+id/table_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         tools:ignore="MissingConstraints">
         <TableRow>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:layout_marginRight="20dp"
                 android:layout_marginLeft="10dp"
                 android:text="ID"
                 />
@@ -24,14 +24,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
                 android:text="EMAIL"
                 />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:layout_marginRight="20dp"
+                android:layout_gravity="right"
                 android:text="ACTION"
                 />
         </TableRow>
@@ -46,13 +46,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
                 android:id="@+id/textViewCourse"
                 />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
                 android:id="@+id/textViewSession"
                 />
         </TableRow>
