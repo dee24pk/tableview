@@ -113,9 +113,8 @@ public class MainActivity extends AppCompatActivity {
                                 tableRow.addView(email); // Adding textView to tablerow.
 
                                 final Button button = new Button(MainActivity.this);
-                                button.setBackgroundResource(R.drawable.delete);
-                                button.setWidth(1);
-                                button.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+                                button.setBackgroundResource(R.drawable.delete2);
+                                button.setLayoutParams(new TableRow.LayoutParams(5, 90));
                                 button.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -127,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
                                         String myText = items.getText().toString();
                                         String myText2 = items2.getText().toString();
                                         tableLayout.removeView(parent);
-                                        Log.e("value",myText+myText2 );
+                                       // Log.e("value",myText+myText2 );
 
                                     }
                                 });
@@ -136,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
 
                                 final Button button1 = new Button(MainActivity.this);
                                 button1.setBackgroundResource(R.drawable.edit);
-                                button1.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+                                button1.setLayoutParams(new TableRow.LayoutParams(50, 50));
                                 button1.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -147,6 +146,26 @@ public class MainActivity extends AppCompatActivity {
 
                                         String user_id = items.getText().toString();
                                         String user_email = items2.getText().toString();
+
+                                        final Dialog dialog = new Dialog(context);
+                                        dialog.setContentView(R.layout.edit_email);
+                                        final Button submit = (Button) dialog.findViewById(R.id.save_edit);
+                                        ImageView close = (ImageView) dialog.findViewById(R.id.imageView_close);
+                                        edit_email = (EditText) dialog.findViewById(R.id.email_edit);
+                                        edit_email.setText(user_email);
+                                        submit.setOnClickListener(new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View v) {
+                                                add_user();
+                                            }
+                                        });
+                                        dialog.show();
+                                        close.setOnClickListener(new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View v) {
+                                                dialog.cancel();
+                                            }
+                                        });
                                         tableLayout.removeView(parent);
                                        // Log.e("value",myText+myText2 );
 
